@@ -42,8 +42,8 @@ input{
     border-radius: 10px;
     border: 3px transparent solid;
 }
-input:hover{
-    border: 3px #2481a3 solid;
+input:focus, input:hover{
+    outline: 3px #2481a3 solid;
 }
 button{
     height: 38px;
