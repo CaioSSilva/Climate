@@ -69,7 +69,10 @@ button:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.205);
+    box-shadow: 0 8px 32px 0 #5495adbb;backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    color: white;
     width: 70%;
     height: 50vh;
     border-top-left-radius: 25px;
