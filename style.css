@@ -91,7 +91,7 @@ button:focus{
     margin: 0;
 }
 #error-img{
-    width: 20%;
+    width: 80px;
     margin: 20px;
 }
 @media screen and (max-width:600px) {
