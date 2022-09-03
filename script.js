@@ -31,10 +31,10 @@ function getData(){
         <div>
             <h1>${data.name}</h1>
             <p>Clima: ${clima}</p>
-            <p>Sensação Termica: ${feelslike} ºC</p>
+            <p>Sensação Térmica: ${feelslike} ºC</p>
             <p>Temperatura: ${temp} ºC</p>
-            <p>Temperatura-Maxima: ${temp_max} ºC</p>
-            <p>Temperatura-Minima: ${temp_min} ºC</p>
+            <p>Temperatura-Máxima: ${temp_max} ºC</p>
+            <p>Temperatura-Mínima: ${temp_min} ºC</p>
             <p>Umidade: ${humidity} %</p>
             <p>Pressão: ${pressure} hPa</p>
         </div>`
@@ -53,3 +53,8 @@ function getData(){
 
     })
 }
+window.addEventListener('keyup', (e)=>{
+    if (e.key === "Enter") {
+        getData()
+    }
+})
