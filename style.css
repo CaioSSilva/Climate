@@ -12,16 +12,13 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    justify-content: center;
     align-items: center;
-    transition: 2s ease;
+    transition: 0.5s ease;
+    padding-top: 40px;
 }
-#starter > h1{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
+#starter img{
+    width: 20%;
+    margin-bottom: 20px;
 }
 #starter > p{
     margin-top: 5px;
@@ -77,7 +74,7 @@ button:focus{
     height: 50vh;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    animation: appear 2s ease-in-out;
+    animation: appear 0.5s ease-in-out;
 }
 @keyframes appear {
     0%{
@@ -97,6 +94,9 @@ button:focus{
 @media screen and (max-width:600px) {
     input{
         width: 70%;
+    }
+    #starter img{
+        width: 50%;
     }
     #results{
         width: 100%;
