@@ -23,7 +23,7 @@ function getData(){
             let humidity = data.main.humidity
             let pressure = data.main.pressure
             let iconPath = `https://openweathermap.org/img/wn/${iconNumber}@2x.png`
-            starter.style.height = '40vh'
+            starter.style.height = '50vh'
             results.style.display = "flex"
             console.log(data)
             results.innerHTML = `
