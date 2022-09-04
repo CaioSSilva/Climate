@@ -32,13 +32,16 @@ const starter = document.getElementById('starter')
             <button id="backButton" onClick="hidepanel()"><img src="./assets/left-arrow.png"/></button>
             <div>
                 <h1>${data.name}</h1>
+                <p>${clima}</p>
             </div>
         </div>
         <div>
             <div class="info temp">
                 <div>
                     <img src=${iconPath} />
-                    <h2>${temp}º</h2>
+                    <div>
+                        <h2>${temp}º</h2>
+                    </div>
                 </div>
                 <h3>${temp_min}º/${temp_max}º</h3>
                 <p>Sensação: ${feelslike}º</p>
