@@ -15,17 +15,17 @@ const starter = document.getElementById('starter')
         console.log(data)
         let clima = data.weather.map(clima => clima.description)
         let iconNumber = data.weather[0].icon
-        let temp = data.main.temp
-        let temp_min = data.main.temp_min
-        let temp_max = data.main.temp_max
-        let feelslike = data.main.feels_like
+        let temp = Math.round(data.main.temp)
+        let temp_min = Math.round(data.main.temp_min)
+        let temp_max = Math.round(data.main.temp_max)
+        let feelslike = Math.round(data.main.feels_like)
         let humidity = data.main.humidity
         let pressure = data.main.pressure
         let clouds = data.clouds.all
         let long = data.coord.lon
         let lat = data.coord.lat
-        let iconPath = `https://openweathermap.org/img/wn/${iconNumber}@4x.png`
-        starter.style.height = '30vh'
+        let iconPath = `https://openweathermap.org/img/wn/${iconNumber}@2x.png`
+        starter.style.height = '50vh'
         results.style.display = "flex"
         results.innerHTML = `
         <div class="title">
@@ -34,39 +34,42 @@ const starter = document.getElementById('starter')
                 <h1>${data.name}</h1>
             </div>
         </div>
-        <div class="info-container">
-            <div>
-                <img src=${iconPath} />
-                <p>${clima}</p>
+        <div>
+            <div class="info temp">
+                <div>
+                    <img src=${iconPath} />
+                    <h2>${temp}º</h2>
+                </div>
+                <h3>${temp_min}º/${temp_max}º</h3>
+                <p>Sensação: ${feelslike}º</p>
             </div>
-            <div>
-                <h3>Localização</h3>
-                <p>Longitude: ${long}</p>
-                <p>Latitude: ${lat}</p>
-            </div>
-            <div>
-                <h3>Clima</h3>
-                <p>Sensação Térmica: ${feelslike} ºC</p>
-                <p>Temperatura: ${temp} ºC</p>
-                <p>Temperatura-Máxima: ${temp_max} ºC</p>
-                <p>Temperatura-Mínima: ${temp_min} ºC</p>
+            <div class="info atmo">
+                <h1>Atmosfera</h1>
                 <p>Nuvens: ${clouds}%</p>
                 <p>Umidade: ${humidity}%</p>
                 <p>Pressão: ${pressure} hPa</p>
             </div>
-        </div>`
+            <div class="info locate">
+                <h1>Localização</h1>
+                <p>Longitude: ${long}</p>
+                <p>Latitude: ${lat}</p>
+            </div>
+        </div>
+        `
     })
     .catch((e) => {
-        starter.style.height = '30vh'
+        starter.style.height = '50vh'
         results.style.display = "flex"
         results.innerHTML = `
-        <div>
-            <img id="error-img" src="https://cdn-icons-png.flaticon.com/512/753/753345.png" width:50px/>
-        </div>
-        <div>
-            <h1>Localização não encontrada!</h1>
-            <p>Tente novamente...</p>
-        </div>`
+        <section>
+            <div>
+                <img id="error-img" src="https://cdn-icons-png.flaticon.com/512/753/753345.png"/>
+            </div>
+            <div>
+                <h1>Localização não encontrada!</h1>
+                <p>Tente novamente...</p>
+            </div>
+        </section>`
 
     })
 }
@@ -77,4 +80,9 @@ window.addEventListener('keyup', (e)=>{
 })
 function hidepanel(){
     results.style.display = "none"
+}
+function upperphase(e){
+    e.map((e) => { 
+    return e[0].toUpperCase() + e.substring(1); 
+    }).join(" ");
 }

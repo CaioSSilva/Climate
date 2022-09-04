@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+body{
+    font-family: 'Secular One', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #5caecc;
+    overflow: hidden;
+}
+@media screen and (max-width:600px) {
+    input{
+        width: 70%;
+    }
+    #starter img{
+        width: 50%;
+    }
+    #results{
+        width: 100%;
+    }
+    .info-container div {
+        flex: 1;
+        margin: 20px;
+    }
+    .info-container img{
+        width: 90px;
+    }
+}
