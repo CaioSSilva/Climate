@@ -73,7 +73,7 @@
     padding: 15px;
     border-radius: 10px;
     margin: 15px;
-    flex: 1;
+    flex:content;
 }
 .info:hover{
     background-color: white;
@@ -93,5 +93,5 @@
     justify-content: space-around;
 }
 .atmo p, .locate p{
-    text-align: justify;
+    text-align:start;
 }
