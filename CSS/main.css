@@ -16,7 +16,11 @@ body{
         width: 50%;
     }
     #results{
+        height: 70vh !important;
         width: 100%;
+    }
+    #starter{
+        height: 30vh !important; 
     }
     .info-container div {
         flex: 1;
