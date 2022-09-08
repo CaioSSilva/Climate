@@ -12,7 +12,6 @@ const starter = document.getElementById('starter')
     await fetch(BASE_URL)
     .then((promise) => promise.json())
     .then(data => {
-        console.log(data)
         let clima = data.weather.map(clima => clima.description)
         let iconNumber = data.weather[0].icon
         let temp = Math.round(data.main.temp)
@@ -65,6 +64,12 @@ const starter = document.getElementById('starter')
         results.style.display = "flex"
         results.innerHTML = `
         <section>
+            <div class="title">
+                <button id="backButton" onClick="hidepanel()"><img src="./assets/left-arrow.png"/></button>
+                <div>
+                    <h1>${placeInput.value}</h1>
+                </div>
+            </div>
             <div>
                 <img id="error-img" src="https://cdn-icons-png.flaticon.com/512/753/753345.png"/>
             </div>

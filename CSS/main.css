@@ -22,6 +22,9 @@ body{
     #starter{
         height: 30vh !important; 
     }
+    .title{
+        width: 100vw;
+    }
     .info-container div {
         flex: 1;
         margin: 20px;
