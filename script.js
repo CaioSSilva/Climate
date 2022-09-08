@@ -1,5 +1,5 @@
 const API_KEY = "4d8fb5b93d4af21d66a2948710284366"
-
+const searchButton = document.getElementById('search')
 const placeInput = document.getElementById('placeName')
 const results = document.getElementById('results')
 const starter = document.getElementById('starter')
@@ -9,7 +9,7 @@ const starter = document.getElementById('starter')
     let inputValue = placeInput.value
     const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${API_KEY}&units=metric&lang=pt_br`
 
-    fetch(BASE_URL)
+    await fetch(BASE_URL)
     .then((promise) => promise.json())
     .then(data => {
         console.log(data)
@@ -60,7 +60,7 @@ const starter = document.getElementById('starter')
         </div>
         `
     })
-    .catch((e) => {
+    .catch(() => {
         starter.style.height = '50vh'
         results.style.display = "flex"
         results.innerHTML = `
@@ -76,16 +76,15 @@ const starter = document.getElementById('starter')
 
     })
 }
-window.addEventListener('keyup', (e)=>{
+searchButton.addEventListener('click', async()=>{
+    await getData()
+})
+
+window.addEventListener('keyup', async(e)=>{
     if (e.key === "Enter") {
-        getData()
+        await getData()
     }
 })
 function hidepanel(){
     results.style.display = "none"
-}
-function upperphase(e){
-    e.map((e) => { 
-    return e[0].toUpperCase() + e.substring(1); 
-    }).join(" ");
 }
